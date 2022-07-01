@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/YouSangSon/Practice_Blockchain/explorer"
-	"github.com/YouSangSon/Practice_Blockchain/rest"
+	"Practice_Blockchain/cli"
+	"Practice_Blockchain/db"
 )
 
 func main() {
-	go explorer.Start(3000)
-	rest.Start(4000)
+	defer db.Close()
+	cli.Start()
 }
